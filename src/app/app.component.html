@@ -13,9 +13,10 @@
     <div class="container-fluid">
       <img src="../assets/Logo.png" />
       <img name="titre" class="center" href="#" src="../assets/LogoText.png">
-     </div>
-      <button class="btn btn-lg sign">Sign Up</button>
-      <button class="btn btn-lg log">Log In</button>
+    </div>
+    <a class="btn btn-lg sign" [routerLink]="['/singup']">Sign Up</a>
+    <a class="btn btn-lg log" [routerLink]="['/login']">Log In</a>
+
   </nav>
 
   <div class="row main">
@@ -148,3 +149,4 @@
 </body>
 
 
+<router-outlet></router-outlet>
