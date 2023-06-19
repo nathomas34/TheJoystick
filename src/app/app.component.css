@@ -1,16 +1,18 @@
 
 body {
-  background-image: url('https://66.media.tumblr.com/83afd056e68a9ebc2acb08c5cf91d40c/tumblr_pjl2tr1EMr1vhed1so1_1280.jpg');
+  background-image: url(../assets/backthejoy1.jpg);
   background-size: 100%;
   background-color: black;
   color: white;
-  margin: 0%;
+  position: absolute;
+  font-family: "Open Sans", chillax;
 }
+
 
 .nav-link,
 .navbar-brand {
   color: white;
-  margin-right: 2%;
+  margin-right: 5%;
 }
 
 .form-control {
@@ -172,12 +174,12 @@ body {
   border-radius: 10px;
 }
 
-.sec-1 {
-  background-image: linear-gradient(to right, rgb(177, 1, 177), blueviolet);
-  margin-right: 2%;
-  border: transparent;
-  border-radius: 5px;
+
+section {
+  padding: 0 20px;
   width: 80%;
-  margin: auto;
+  margin: 20px auto;
+  padding: 10px 0;
+  box-shadow: 0 3px 5px rgba(0,0,0,0.3);
   text-align: center;
 }
