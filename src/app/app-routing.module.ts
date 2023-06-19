@@ -7,7 +7,8 @@ import { SingupComponent } from './singup/singup.component';
 const routes: Routes = [
   { path: "home", component: HomeComponent },
   { path: "login", component: LoginComponent },
-  { path: "singup", component: SingupComponent }
+  { path: "singup", component: SingupComponent },
+  { path: "**", redirectTo: "/home" }
 ];
 
 @NgModule({

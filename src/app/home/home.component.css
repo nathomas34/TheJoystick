@@ -1,0 +1,185 @@
+
+body {
+  background-image: url(../../assets/backthejoy1.jpg);
+  background-size: 100%;
+  background-color: black;
+  color: white;
+  position: absolute;
+  font-family: "Open Sans", chillax;
+}
+
+
+.nav-link,
+.navbar-brand {
+  color: white;
+  margin-right: 5%;
+}
+
+.form-control {
+  background-image: linear-gradient(to right, #333, black);
+  color: white;
+  border: 1px solid rgb(90, 90, 90);
+  width: 50%;
+  margin-right: 2%;
+}
+
+.d-flex {
+  margin: auto;
+  width: 50%;
+}
+
+.btn-outline-success {
+  border: 1px solid rgb(90, 90, 90);
+  color: white;
+}
+
+  .btn-outline-success:hover {
+    border: 1px solid rgb(90, 90, 90);
+    background-color: white;
+    color: black;
+  }
+
+.btn {
+  color: white;
+  border-radius: 0;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+.sign {
+  background-image: linear-gradient(to right, rgb(177, 1, 177), blueviolet);
+  margin-right: 2%;
+  border: transparent;
+}
+
+.log {
+  border: 1px solid blueviolet;
+  background-color: black;
+}
+
+.nav-item {
+  margin-right: 10%;
+}
+
+.active {
+  border-top: 3px solid blueviolet;
+}
+
+.nav-link:hover,
+.navbar-brand:hover {
+  color: blueviolet;
+}
+
+.navbar {
+  margin-top: 1%;
+  padding-bottom: 2%;
+  border-bottom: 1px solid gray;
+}
+
+.channels,
+.middle {
+  border-right: 1px solid gray;
+}
+
+.highlight {
+  background-color: blueviolet;
+  color: white;
+  border-radius: 20px;
+  width: 15%;
+  text-align: center;
+}
+
+.channels .activate {
+  color: blueviolet;
+}
+
+.row img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.activate img {
+  border: 2px solid blueviolet;
+}
+
+.channels .row {
+  margin-top: 4%;
+}
+
+.grad {
+  background-image: linear-gradient(to right, rgb(177, 1, 177), blueviolet);
+  margin-right: 2%;
+  border: transparent;
+  border-radius: 5px;
+  width: 80%;
+  margin: auto;
+}
+
+.jumbo {
+  background-image: linear-gradient(to right, blueviolet, rgb(61, 26, 94));
+  width: 100%;
+  padding: 5% 5%;
+}
+
+.channels {
+  margin-left: 2%;
+}
+
+.btn-orange {
+  background-color: orangered;
+  border-radius: 5px;
+}
+
+.car .row img {
+  border-radius: 10px;
+  width: 100%;
+  height: 50%;
+}
+
+.car {
+  width: 100%;
+  height: 100%;
+}
+
+.round {
+  border-radius: 5px;
+  padding: 2%;
+  width: 90%;
+}
+
+.car .row p {
+  color: gray;
+}
+
+.car .row h4 {
+  margin-top: 5%;
+}
+
+.img-container {
+  text-align: center;
+  padding: 15% 15%;
+  border-radius: 15px;
+  background-color: rgb(0, 0, 0, 0.15);
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: 5%;
+}
+
+.tag {
+  display: inline;
+  background-color: #333;
+  padding: 2% 5%;
+  border-radius: 10px;
+}
+
+
+section {
+  padding: 0 20px;
+  width: 80%;
+  margin: 20px auto;
+  padding: 10px 0;
+  box-shadow: 0 3px 5px rgba(0,0,0,0.3);
+  text-align: center;
+}

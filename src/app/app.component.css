@@ -1,14 +1,4 @@
 
-body {
-  background-image: url(../assets/backthejoy1.jpg);
-  background-size: 100%;
-  background-color: black;
-  color: white;
-  position: absolute;
-  font-family: "Open Sans", chillax;
-}
-
-
 .nav-link,
 .navbar-brand {
   color: white;
