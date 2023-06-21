@@ -13,12 +13,14 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { HttpClientModule } from '@angular/common/http';
+import { FichetechComponent } from './fichetech/fichetech.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    SingupComponent
+    SingupComponent,
+    FichetechComponent
   ],
   imports: [
     BrowserModule,
