@@ -26,10 +26,13 @@
         <input type="text" [(ngModel)]="typeUtilisateur" name="typeUtilisateur" required>
         <label>Type d'utilisateur :</label>
       </div>
-      <button (click)="creerUtilisateur()" >
-        
-        S'inscrire
-      </button>
+        <a (click)="creerUtilisateur()">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          S'inscrire
+        </a>
       <p>{{message}}</p>
     </form>
   </div>
