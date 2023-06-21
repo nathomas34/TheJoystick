@@ -3,19 +3,20 @@
   <h2>Login</h2>
   <form>
     <div class="user-box">
-      <input type="text" name="" required="">
+      <input type="text" [(ngModel)]="telephone" name="telephone" required>
       <label>Numero de Téléphone :</label>
     </div>
     <div class="user-box">
-      <input type="password" name="" required="">
+      <input type="password" [(ngModel)]="code" name="code" required>
       <label>CODE PIN :</label>
     </div>
-    <a href="#">
+    <a (click)="verifierInfos(telephone, code)">
       <span></span>
       <span></span>
       <span></span>
       <span></span>
       Connexion
     </a>
+    <p>{{message}}</p>
   </form>
 </div>
