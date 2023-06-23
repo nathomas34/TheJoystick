@@ -14,21 +14,21 @@ footer {
   border-radius: 30px;
 }
 
-  .container > * {
-    padding: 40px 15px;
-  }
+.container>* {
+  padding: 40px 15px;
+}
 
 .article {
   display: flex;
   flex-wrap: wrap;
 }
 
-  .article > * {
-    padding: 8px 0;
-    margin: auto;
-    width: clamp(400px, 40%, 100%);
-    text-align: center;
-  }
+.article>* {
+  padding: 8px 0;
+  margin: auto;
+  width: clamp(400px, 40%, 100%);
+  text-align: center;
+}
 
 .dot {
   height: 15px;
@@ -46,18 +46,18 @@ footer {
   width: clamp(200px, 100%, 400px);
 }
 
-  .carousel > .img {
-    aspect-ratio: 1/1;
-    scroll-behavior: smooth;
-    overflow: hidden;
-    display: flex;
-  }
+.carousel>.img {
+  aspect-ratio: 1/1;
+  scroll-behavior: smooth;
+  overflow: hidden;
+  display: flex;
+}
 
-    .carousel > .img > img {
-      transition: 0.5s;
-    }
+.carousel>.img>img {
+  transition: 0.5s;
+}
 
-.stars > * {
+.stars>* {
   fill: #5397b4;
   width: 20px;
 }
@@ -72,10 +72,10 @@ button {
   transition: 0.5s ease;
 }
 
-  button:hover {
-    transform: scale(1.1);
-    transition: 0.5s ease;
-  }
+button:hover {
+  transform: scale(1.1);
+  transition: 0.5s ease;
+}
 
 .tech {
   border-top: 1px solid rgb(200 200 200);
@@ -83,24 +83,24 @@ button {
   text-align: center;
 }
 
-  .tech > .grid > svg {
-    height: 80px;
-    width: 80px;
-    fill: rgb(34 34 34);
-  }
+.tech>.grid>svg {
+  height: 80px;
+  width: 80px;
+  fill: rgb(34 34 34);
+}
 
-  .tech > .grid {
-    display: grid;
-    grid-gap: 30px;
-    grid: auto auto auto / auto auto auto auto;
-    width: clamp(100px, 100%, 700px);
-    margin: auto;
-    overflow: auto;
-  }
+.tech>.grid {
+  display: grid;
+  grid-gap: 30px;
+  grid: auto auto auto / auto auto auto auto;
+  width: clamp(100px, 100%, 700px);
+  margin: auto;
+  overflow: auto;
+}
 
-    .tech > .grid > * {
-      margin: auto;
-    }
+.tech>.grid>* {
+  margin: auto;
+}
 
 ::-webkit-scrollbar {
   width: 10px;
@@ -116,11 +116,11 @@ button {
   border-radius: 360px;
 }
 
-.description > p {
+.description>p {
   line-height: 30px;
   text-align: justify;
 }
 
-.description > h2 {
+.description>h2 {
   line-height: 40px;
 }

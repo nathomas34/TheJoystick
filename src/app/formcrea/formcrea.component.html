@@ -1,25 +1,32 @@
-<button>Retour</button><br />
+<button [routerLink]="['/home']">Retour </button><br />
+<form enctype='multipart/form-data'></form>
 <div class="container">
   <h2>Ajouter un jeu </h2>
   <div class="article">
     <div class="carousel">
       <div class="img">
-        <input type="file" multiple>
+        <input type="file" [(ngModel)]="image" name="image" multiple>
       </div>
       <div class="span-cont"></div>
     </div>
     <div class="description">
       <div class="user-box">
         <label>Nom :</label><br />
-        <input type="text" name="nom" required>
+        <input type="text" [(ngModel)]="nom" name="nom" required>
       </div><br />
       <div class="user-box">
-        <label>description :</label><br />
-        <textarea type="text" name="prenom" required></textarea>
+        <label>Description :</label><br />
+        <textarea type="text" [(ngModel)]="description" name="description" required></textarea>
+      </div><br />
+      <div class="user-box">
+        <label>Créateur :</label><br />
+        <input type="text" [(ngModel)]="createur" name="createur" required>
       </div><br />
       <div class="achats">
         <div id="likes" class="like"></div>
-        <div><input type="button" id="pause" value="Ajouter"></div>
+        <div><input type="button" id="pause" value="Ajouter" (click)="creerJeu()"></div>
+        <p>{{message}}</p>
       </div><br />
     </div>
   </div>
+</div>

@@ -4,7 +4,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
@@ -14,20 +15,20 @@
       <img src="../assets/LogoNew1.png" />
       <button class="btn log round" [routerLink]="['/formcrea']"> + </button>
     </div>
-    <ng-container
-    *ngIf="estConnecte; then loggedIn; else loggedOut">
-  </ng-container>
-      <ng-template #loggedIn>
-        <div>
-          <a class="btn btn-lg log" (click) = "logOut()">Log Out</a>
-        </div>
-      </ng-template>
-      <ng-template #loggedOut>
-        <div>
-          <a class="btn btn-lg sign" [routerLink]="['/singup']">Sign Up</a>
-          <a class="btn btn-lg log" [routerLink]="['/login']">Log In</a>
-        </div>
-      </ng-template>
+    <ng-container *ngIf="estConnecte; then loggedIn; else loggedOut">
+    </ng-container>
+    <ng-template #loggedIn>
+      <div>
+        <a class="btn btn-lg log" (click)="logOut()">User</a>
+        <a class="btn btn-lg log" (click)="logOut()">Log Out</a>
+      </div>
+    </ng-template>
+    <ng-template #loggedOut>
+      <div>
+        <a class="btn btn-lg sign" [routerLink]="['/singup']">Sign Up</a>
+        <a class="btn btn-lg log" [routerLink]="['/login']">Log In</a>
+      </div>
+    </ng-template>
   </nav>
 
   <div class="row main">
@@ -93,9 +94,9 @@
         <h3 style="text-align: center;">Les Jeux</h3>
         <div class="car">
           <div class="row">
-            <div class="col-lg-2 col-md-4 col-sm-6" >
-                <img [src]="">
-                <h4></h4>
+            <div class="col-lg-2 col-md-4 col-sm-6">
+              <img [src]="">
+              <h4></h4>
               <button class="btn log round" [routerLink]="['/fichetech']">Voir +</button>
             </div>
           </div>
@@ -108,28 +109,55 @@
     <section class="col-lg">
       <h1> The Joystick C'est Quoi ? </h1>
       <p>
-        TheJoystick est une entreprise innovante qui se consacre à la présentation de concepts de jeux vidéo et à l'organisation d'un processus de vote pour élire le meilleur concept. Nous offrons une plateforme interactive et engageante où les créateurs de jeux vidéo peuvent présenter leurs idées, recueillir des commentaires constructifs et avoir la chance de voir leur concept se réaliser.
+        TheJoystick est une entreprise innovante qui se consacre à la présentation de concepts de jeux vidéo et à
+        l'organisation d'un processus de vote pour élire le meilleur concept. Nous offrons une plateforme interactive et
+        engageante où les créateurs de jeux vidéo peuvent présenter leurs idées, recueillir des commentaires
+        constructifs et avoir la chance de voir leur concept se réaliser.
 
-        Notre objectif principal est de donner aux concepteurs de jeux vidéo émergents une visibilité accrue et une opportunité unique de partager leurs idées avec une communauté passionnée de joueurs et de professionnels de l'industrie. Nous croyons fermement en la créativité et l'innovation, et nous voulons encourager les talents prometteurs à s'exprimer et à briller.
+        Notre objectif principal est de donner aux concepteurs de jeux vidéo émergents une visibilité accrue et une
+        opportunité unique de partager leurs idées avec une communauté passionnée de joueurs et de professionnels de
+        l'industrie. Nous croyons fermement en la créativité et l'innovation, et nous voulons encourager les talents
+        prometteurs à s'exprimer et à briller.
 
-        Comment ça fonctionne ? C'est simple ! Les concepteurs de jeux peuvent soumettre leurs idées via notre plateforme en ligne conviviale. Ils peuvent fournir des descriptions détaillées de leur concept, des visuels attrayants, des démos jouables ou des vidéos explicatives pour captiver l'audience.
+        Comment ça fonctionne ? C'est simple ! Les concepteurs de jeux peuvent soumettre leurs idées via notre
+        plateforme en ligne conviviale. Ils peuvent fournir des descriptions détaillées de leur concept, des visuels
+        attrayants, des démos jouables ou des vidéos explicatives pour captiver l'audience.
 
-        Une fois que les concepts sont soumis, la communauté de TheJoystick, composée de joueurs passionnés et de professionnels de l'industrie du jeu, peut découvrir les différentes propositions et voter pour leurs favoris. Ce processus de vote équitable et transparent permet d'identifier les concepts les plus populaires et les plus prometteurs.
+        Une fois que les concepts sont soumis, la communauté de TheJoystick, composée de joueurs passionnés et de
+        professionnels de l'industrie du jeu, peut découvrir les différentes propositions et voter pour leurs favoris.
+        Ce processus de vote équitable et transparent permet d'identifier les concepts les plus populaires et les plus
+        prometteurs.
 
-        Nous organisons régulièrement des compétitions et des événements spéciaux pour mettre en avant les meilleurs concepts. Les concepteurs peuvent remporter des prix intéressants, tels que des opportunités de financement, des partenariats avec des éditeurs de jeux vidéo renommés ou même des contrats de développement.
+        Nous organisons régulièrement des compétitions et des événements spéciaux pour mettre en avant les meilleurs
+        concepts. Les concepteurs peuvent remporter des prix intéressants, tels que des opportunités de financement, des
+        partenariats avec des éditeurs de jeux vidéo renommés ou même des contrats de développement.
 
-        En plus de notre plateforme de présentation de concepts, TheJoystick propose également des ressources et des outils précieux pour les concepteurs de jeux vidéo. Nous offrons des conseils d'experts, des tutoriels, des séminaires en ligne et des opportunités de réseautage pour aider les talents émergents à perfectionner leurs compétences et à se connecter avec d'autres professionnels de l'industrie.
+        En plus de notre plateforme de présentation de concepts, TheJoystick propose également des ressources et des
+        outils précieux pour les concepteurs de jeux vidéo. Nous offrons des conseils d'experts, des tutoriels, des
+        séminaires en ligne et des opportunités de réseautage pour aider les talents émergents à perfectionner leurs
+        compétences et à se connecter avec d'autres professionnels de l'industrie.
 
-        Chez TheJoystick, nous croyons que chaque idée compte et que le meilleur concept de jeu vidéo peut provenir de n'importe qui, qu'il soit un créateur novice ou un vétéran expérimenté. Nous voulons créer une communauté dynamique et inclusive où tous les passionnés de jeux vidéo peuvent s'exprimer librement et contribuer à l'évolution de l'industrie.
+        Chez TheJoystick, nous croyons que chaque idée compte et que le meilleur concept de jeu vidéo peut provenir de
+        n'importe qui, qu'il soit un créateur novice ou un vétéran expérimenté. Nous voulons créer une communauté
+        dynamique et inclusive où tous les passionnés de jeux vidéo peuvent s'exprimer librement et contribuer à
+        l'évolution de l'industrie.
 
-        Rejoignez-nous dès aujourd'hui sur TheJoystick et découvrez les concepts de jeux vidéo les plus excitants du moment. Votez pour vos favoris, partagez vos opinions et aidez à façonner le futur du monde du jeu vidéo. Ensemble, nous pouvons encourager l'innovation, la créativité et l'excellence dans l'industrie du jeu vidéo.
+        Rejoignez-nous dès aujourd'hui sur TheJoystick et découvrez les concepts de jeux vidéo les plus excitants du
+        moment. Votez pour vos favoris, partagez vos opinions et aidez à façonner le futur du monde du jeu vidéo.
+        Ensemble, nous pouvons encourager l'innovation, la créativité et l'excellence dans l'industrie du jeu vidéo.
       </p>
     </section>
   </div>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  </body>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+</body>
