@@ -3,11 +3,12 @@
     "",
     "\\src",
     "\\src\\app",
+    "\\src\\app\\fichetech",
+    "\\src\\app\\formcrea",
     "\\src\\app\\home",
     "\\src\\app\\login",
     "\\src\\app\\singup",
     "\\src\\assets"
   ],
-  "SelectedNode": "\\src\\app\\singup\\singup.component.html",
   "PreviewInSolutionExplorer": false
 }

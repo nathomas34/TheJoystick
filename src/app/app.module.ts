@@ -15,6 +15,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { HttpClientModule } from '@angular/common/http';
 import { FichetechComponent } from './fichetech/fichetech.component';
 import { FormcreaComponent } from './formcrea/formcrea.component';
+import { FicheutilisateurComponent } from './ficheutilisateur/ficheutilisateur.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,8 @@ import { FormcreaComponent } from './formcrea/formcrea.component';
     HomeComponent,
     SingupComponent,
     FichetechComponent,
-    FormcreaComponent
+    FormcreaComponent,
+    FicheutilisateurComponent
   ],
   imports: [
     BrowserModule,
