@@ -1,20 +1,25 @@
-<h2>Ajouter un jeu </h2>
-<form>
-  <div class="user-box">
-    <label>Nom :</label>
-    <input type="text" name="nom" required>
+<button>Retour</button><br />
+<div class="container">
+  <h2>Ajouter un jeu </h2>
+  <div class="article">
+    <div class="carousel">
+      <div class="img">
+        <input type="file" multiple>
+      </div>
+      <div class="span-cont"></div>
+    </div>
+    <div class="description">
+      <div class="user-box">
+        <label>Nom :</label><br />
+        <input type="text" name="nom" required>
+      </div><br />
+      <div class="user-box">
+        <label>description :</label><br />
+        <textarea type="text" name="prenom" required></textarea>
+      </div><br />
+      <div class="achats">
+        <div id="likes" class="like"></div>
+        <div><input type="button" id="pause" value="Ajouter"></div>
+      </div><br />
+    </div>
   </div>
-  <div class="user-box">
-    <label>description :</label>
-    <textarea type="text" name="prenom" required></textarea>
-  </div>
-  <input type="file" multiple>
-  <p>Drag your files here or click in this area.</p>
-  <a>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    Ajouter
-  </a>
-</form>
