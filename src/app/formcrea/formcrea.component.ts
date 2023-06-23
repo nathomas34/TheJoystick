@@ -12,7 +12,6 @@ interface Jeu {
   createur: string;
   votes: string[];
 }
-
 @Component({
   selector: 'app-formcrea',
   templateUrl: './formcrea.component.html',

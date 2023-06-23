@@ -92,11 +92,11 @@
 
       <section style="margin-top: 5%;">
         <h3 style="text-align: center;">Les Jeux</h3>
-        <div class="car">
-          <div class="row">
+        <div class="car" (ngModelChange)="getJeux()">
+          <div class="row" *ngFor="let jeu of jeux | async">
             <div class="col-lg-2 col-md-4 col-sm-6">
-              <img [src]="">
-              <h4></h4>
+              <img [src]="jeu.image">
+              <h4>{{jeu.nom}}</h4>
               <button class="btn log round" [routerLink]="['/fichetech']">Voir +</button>
             </div>
           </div>
