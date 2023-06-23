@@ -1,15 +1,19 @@
 <h2>Ajouter un jeu </h2>
-<form>
+<form enctype='multipart/form-data'>
   <div class="user-box">
     <label>Nom :</label>
     <input type="text" name="nom" required>
   </div>
   <div class="user-box">
     <label>description :</label>
-    <textarea type="text" name="prenom" required></textarea>
+    <textarea type="text" name="description" required></textarea>
   </div>
-  <input type="file" multiple>
+  <input type="file" name="image" multiple>
   <p>Drag your files here or click in this area.</p>
+  <div class="user-box">
+    <label>Createur :</label>
+    <input type="text" name="createur" required>
+  </div>
   <a>
     <span></span>
     <span></span>

@@ -14,9 +14,20 @@
       <img src="../assets/LogoNew1.png" />
       <button class="btn log round" [routerLink]="['/formcrea']"> + </button>
     </div>
-    <a class="btn btn-lg sign" [routerLink]="['/singup']">Sign Up</a>
-    <a class="btn btn-lg log" [routerLink]="['/login']">Log In</a>
-
+    <ng-container
+    *ngIf="estConnecte; then loggedIn; else loggedOut">
+  </ng-container>
+      <ng-template #loggedIn>
+        <div>
+          <a class="btn btn-lg log" (click) = "logOut()">Log Out</a>
+        </div>
+      </ng-template>
+      <ng-template #loggedOut>
+        <div>
+          <a class="btn btn-lg sign" [routerLink]="['/singup']">Sign Up</a>
+          <a class="btn btn-lg log" [routerLink]="['/login']">Log In</a>
+        </div>
+      </ng-template>
   </nav>
 
   <div class="row main">
@@ -82,143 +93,10 @@
         <h3 style="text-align: center;">Les Jeux</h3>
         <div class="car">
           <div class="row">
-            <div class="col-lg-2 col-md-4 col-sm-6">
-              <img src="https://images6.alphacoders.com/107/thumb-1920-1072679.jpg">
-              <h4>Valorant</h4>
+            <div class="col-lg-2 col-md-4 col-sm-6" >
+                <img [src]="">
+                <h4></h4>
               <button class="btn log round" [routerLink]="['/fichetech']">Voir +</button>
-            </div>
-            <div class="col-lg-2 col-md-4 col-sm-6">
-              <img src="https://c4.wallpaperflare.com/wallpaper/172/177/105/video-game-ori-and-the-will-of-the-wisps-hd-wallpaper-preview.jpg">
-              <h4>Ori</h4>
-              <button class="btn log round">Voir +</button>
-            </div>
-            <div class="col-lg-2 col-md-4 col-sm-6">
-              <img src="https://wallpapercave.com/wp/wp2441597.jpg">
-              <h4>Fortnite</h4>
-              <button class="btn log round">Voir +</button>
-            </div>
-            <div class="col-lg-2 col-md-4 col-sm-6">
-              <img src="https://wallpaperaccess.com/full/949556.jpg">
-              <h4>PUBG</h4>
-              <button class="btn log round">Voir +</button>
-            </div>
-            <div class="col-lg-2 col-md-4 col-sm-6">
-              <img src="https://i.pinimg.com/originals/34/78/d7/3478d7fd5bda00dc7d0b3ba420a71c21.jpg">
-              <h4>Apex</h4>
-              <button class="btn log round">Voir +</button>
-            </div>
-            <div class="col-lg-2 col-md-4 col-sm-6">
-              <img src="https://wallpapercave.com/wp/wp6996688.jpg">
-              <h4>Rogue</h4>
-              <button class="btn log round">Voir +</button>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section style="margin-top: 5%;">
-        <div class="car">
-          <div class="row">
-            <div class="col-lg-2 col-md-4 col-sm-6">
-              <img src="https://images6.alphacoders.com/107/thumb-1920-1072679.jpg">
-              <h4>Valorant</h4>
-              <button class="btn log round">Voir +</button>
-            </div>
-            <div class="col-lg-2 col-md-4 col-sm-6">
-              <img src="https://c4.wallpaperflare.com/wallpaper/172/177/105/video-game-ori-and-the-will-of-the-wisps-hd-wallpaper-preview.jpg">
-              <h4>Ori</h4>
-              <button class="btn log round">Voir +</button>
-            </div>
-            <div class="col-lg-2 col-md-4 col-sm-6">
-              <img src="https://wallpapercave.com/wp/wp2441597.jpg">
-              <h4>Fortnite</h4>
-              <button class="btn log round">Voir +</button>
-            </div>
-            <div class="col-lg-2 col-md-4 col-sm-6">
-              <img src="https://wallpaperaccess.com/full/949556.jpg">
-              <h4>PUBG</h4>
-              <button class="btn log round">Voir +</button>
-            </div>
-            <div class="col-lg-2 col-md-4 col-sm-6">
-              <img src="https://i.pinimg.com/originals/34/78/d7/3478d7fd5bda00dc7d0b3ba420a71c21.jpg">
-              <h4>Apex</h4>
-              <button class="btn log round">Voir +</button>
-            </div>
-            <div class="col-lg-2 col-md-4 col-sm-6">
-              <img src="https://wallpapercave.com/wp/wp6996688.jpg">
-              <h4>Rogue</h4>
-              <button class="btn log round">Voir +</button>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section style="margin-top: 5%;">
-        <div class="car">
-          <div class="row">
-            <div class="col-lg-2 col-md-4 col-sm-6">
-              <img src="https://images6.alphacoders.com/107/thumb-1920-1072679.jpg">
-              <h4>Valorant</h4>
-              <button class="btn log round">Voir +</button>
-            </div>
-            <div class="col-lg-2 col-md-4 col-sm-6">
-              <img src="https://c4.wallpaperflare.com/wallpaper/172/177/105/video-game-ori-and-the-will-of-the-wisps-hd-wallpaper-preview.jpg">
-              <h4>Ori</h4>
-              <button class="btn log round">Voir +</button>
-            </div>
-            <div class="col-lg-2 col-md-4 col-sm-6">
-              <img src="https://wallpapercave.com/wp/wp2441597.jpg">
-              <h4>Fortnite</h4>
-              <button class="btn log round">Voir +</button>
-            </div>
-            <div class="col-lg-2 col-md-4 col-sm-6">
-              <img src="https://wallpaperaccess.com/full/949556.jpg">
-              <h4>PUBG</h4>
-              <button class="btn log round">Voir +</button>
-            </div>
-            <div class="col-lg-2 col-md-4 col-sm-6">
-              <img src="https://i.pinimg.com/originals/34/78/d7/3478d7fd5bda00dc7d0b3ba420a71c21.jpg">
-              <h4>Apex</h4>
-              <button class="btn log round">Voir +</button>
-            </div>
-            <div class="col-lg-2 col-md-4 col-sm-6">
-              <img src="https://wallpapercave.com/wp/wp6996688.jpg">
-              <h4>Rogue</h4>
-              <button class="btn log round">Voir +</button>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section style="margin-top: 5%;">
-        <div class="car">
-          <div class="row">
-            <div class="col-lg-2 col-md-4 col-sm-6">
-              <img src="https://images6.alphacoders.com/107/thumb-1920-1072679.jpg">
-              <h4>Valorant</h4>
-              <button class="btn log round">Voir +</button>
-            </div>
-            <div class="col-lg-2 col-md-4 col-sm-6">
-              <img src="https://c4.wallpaperflare.com/wallpaper/172/177/105/video-game-ori-and-the-will-of-the-wisps-hd-wallpaper-preview.jpg">
-              <h4>Ori</h4>
-              <button class="btn log round">Voir +</button>
-            </div>
-            <div class="col-lg-2 col-md-4 col-sm-6">
-              <img src="https://wallpapercave.com/wp/wp2441597.jpg">
-              <h4>Fortnite</h4>
-              <button class="btn log round">Voir +</button>
-            </div>
-            <div class="col-lg-2 col-md-4 col-sm-6">
-              <img src="https://wallpaperaccess.com/full/949556.jpg">
-              <h4>PUBG</h4>
-              <button class="btn log round">Voir +</button>
-            </div>
-            <div class="col-lg-2 col-md-4 col-sm-6">
-              <img src="https://i.pinimg.com/originals/34/78/d7/3478d7fd5bda00dc7d0b3ba420a71c21.jpg">
-              <h4>Apex</h4>
-              <button class="btn log round">Voir +</button>
-            </div>
-            <div class="col-lg-2 col-md-4 col-sm-6">
-              <img src="https://wallpapercave.com/wp/wp6996688.jpg">
-              <h4>Rogue</h4>
-              <button class="btn log round">Voir +</button>
             </div>
           </div>
         </div>

@@ -2,6 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { Observable } from 'rxjs';
 
+interface Utilisateur {
+  nom:string;
+  prenom : string;
+  telephone: string;
+  email: string;
+  code: string;
+}
 @Component({
   selector: 'app-singup',
   templateUrl: './singup.component.html',
@@ -9,21 +16,21 @@ import { Observable } from 'rxjs';
 })
 
 
-export class SingupComponent{
+export class SingupComponent implements OnInit{
   // propriétés de la classe
-  utilisateursCollection: AngularFirestoreCollection<any> | null = null;
-  utilisateurs: Observable<any[]> | null = null;
+  utilisateursCollection: AngularFirestoreCollection<Utilisateur> | null = null;
+  utilisateurs: Observable<Utilisateur[]> | null = null;
   nom: string = '';
   prenom: string = '';
   telephone: string = '';
   email: string = '';
   code: string = '';
-  typeUtilisateur: string = '';
   message: string = '';
 
   constructor(public db: AngularFirestore) { }
 
   ngOnInit() {
+    // on récupère la liste des utilisateurs
     this.utilisateursCollection = this.db.collection('utilisateurs');
     this.utilisateurs = this.utilisateursCollection.valueChanges();
   }
@@ -36,12 +43,11 @@ export class SingupComponent{
       prenom: this.prenom,
       telephone: this.telephone,
       email: this.email,
-      code: this.code,
-      typeUtilisateur: this.typeUtilisateur,
+      code: this.code
     };
     // on vérifie si les champs ne sont pas vides à l'exception de l'email qui est facultatif
-    if (!this.typeUtilisateur || !this.nom || !this.prenom || !this.telephone || !this.code) {
-      this.message = 'Veuillez remplir tous les champs obligatoires.';
+    if (!this.nom || !this.prenom || !this.telephone || !this.code) {
+      this.message = 'Veuillez remplir les champs obligatoires.';
       return;
     }
     // si la collection des utilisateurs existe, on ajoute l'utilisateur
