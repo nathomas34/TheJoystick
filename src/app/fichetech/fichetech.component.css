@@ -1,7 +1,15 @@
+
 html {
-  font-family: "Nunito", sans-serif;
+  background-image: url(../../assets/backthejoy1.jpg);
+  background-size: 100%;
+  background-color: black;
+}
+body {
+
+  color: white;
+  position: absolute;
+  font-family: "Open Sans", chillax;
   color: rgb(34 34 34);
-  background: linear-gradient(rgb(255, 255, 255), rgb(250, 250, 250));
 }
 
 footer {
@@ -41,26 +49,12 @@ footer {
   transition: 0.5s;
 }
 
-.carousel,
-.achats {
-  width: clamp(200px, 100%, 400px);
-}
-
-  .carousel > .img {
+  .img {
     aspect-ratio: 1/1;
     scroll-behavior: smooth;
     overflow: hidden;
     display: flex;
   }
-
-    .carousel > .img > img {
-      transition: 0.5s;
-    }
-
-.stars > * {
-  fill: #5397b4;
-  width: 20px;
-}
 
 button {
   padding: 10px 20px;
