@@ -1,17 +1,17 @@
 <body src="../../assets/backthejoy1.jpg">
-  <button>Retour</button><br />
-  <div class="container">
-    <div class="article">
+  <button [routerLink]="['/home']">Retour</button><br />
+  <div class="container" *ngFor="let jeu of jeux | async">
+    <div class="article" *ngIf="jeuId === jeu.id">
       <div class="carousel">
         <div class="img">
-          <img src="https://media.ldlc.com/r374/ld/products/00/05/82/02/LD0005820219_1.jpg">
+          <img [src]="jeu.image">
         </div>
         <div class="span-cont"></div>
       </div>
       <div class="description">
-        <h2>Nom du jeux</h2>
+        <h2>{{jeu.nom}}</h2>
         <p>
-          description
+          {{jeu.description}}
         </p>
       </div>
       <div class="achats">

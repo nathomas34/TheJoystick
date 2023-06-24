@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import {
   AngularFirestore,
   AngularFirestoreCollection,
+  QueryDocumentSnapshot,
 } from '@angular/fire/compat/firestore';
 import { Observable } from 'rxjs';
-import { Router, ActivatedRoute } from '@angular/router';
 
 interface Utilisateur {
   nom: string;
@@ -33,7 +33,6 @@ export class HomeComponent implements OnInit {
   utilisateurs: Observable<Utilisateur[]> | null = null;
   jeuxCollection: AngularFirestoreCollection<Jeu> | null = null;
   jeux: Observable<any[]> | null = null;
-  jeuSelectionne: Jeu | null = null;
   estConnecte: boolean = false;
   constructor(public db: AngularFirestore) {}
 
@@ -41,9 +40,9 @@ export class HomeComponent implements OnInit {
     // on récupère la liste des utilisateurs
     this.utilisateursCollection = this.db.collection('utilisateurs');
     this.utilisateurs = this.utilisateursCollection.valueChanges();
-    // on récupère la liste des jeux
+    // on récupère la liste des jeux avec les ids associés
     this.jeuxCollection = this.db.collection('jeux');
-    this.jeux = this.jeuxCollection.valueChanges();
+    this.jeux = this.jeuxCollection.valueChanges({ idField: 'idJeu' });
     // on récupére l'id de l'utilisateur connecté avec localStorage
     const utilisateurId = localStorage.getItem('utilisateurId');
     // on vérifie si l'utilisateur est connecté

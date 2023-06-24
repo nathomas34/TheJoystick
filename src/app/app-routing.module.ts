@@ -7,16 +7,16 @@ import { LoginComponent } from './login/login.component';
 import { SingupComponent } from './singup/singup.component';
 
 const routes: Routes = [
-  { path: "home", component: HomeComponent },
-  { path: "singup", component: SingupComponent },
-  { path: "login", component: LoginComponent },
-  { path: "fichetech", component: FichetechComponent },
-  { path: "formcrea", component: FormcreaComponent },
-  { path: "**", redirectTo: "/home" }
+  { path: 'home', component: HomeComponent },
+  { path: 'singup', component: SingupComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'fichetech/:id', component: FichetechComponent },
+  { path: 'formcrea', component: FormcreaComponent },
+  { path: '**', redirectTo: '/home' },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
