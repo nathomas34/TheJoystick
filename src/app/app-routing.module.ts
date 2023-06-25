@@ -5,6 +5,7 @@ import { FormcreaComponent } from './formcrea/formcrea.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { SingupComponent } from './singup/singup.component';
+import { FicheutilisateurComponent } from './ficheutilisateur/ficheutilisateur.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'fichetech/:id', component: FichetechComponent },
   { path: 'formcrea', component: FormcreaComponent },
+  { path: 'ficheutilisateur/:id', component: FicheutilisateurComponent },
   { path: '**', redirectTo: '/home' },
 ];
 

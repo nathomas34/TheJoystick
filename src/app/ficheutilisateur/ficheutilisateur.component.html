@@ -1,17 +1,31 @@
-
-<div class="container">
-  <input type="checkbox" class="toggle" id="toggle" checked="checked" />
-  <div class="menu">
-    <div class="top">
-      <a class="exit" href="#" tabindex="0"></a>
+<button [routerLink]="['/home']">Retour</button><br />
+<ng-container *ngFor="let utilisateur of utilisateurs | async">
+  <ng-container *ngIf="utilisateurId === utilisateur.id">
+    <div class="container">
+      <input type="checkbox" class="toggle" id="toggle" checked="checked" />
+      <div class="menu">
+        <div class="top">
+          <a class="exit" href="#" tabindex="0"></a>
+        </div>
+        <ul class="middle">
+          <li tabindex="0"><i class="fa fa-check-square-o"></i>Nom :<input type="text" id="nom"
+              [(ngModel)]="utilisateur.nom" name="nom" placeholder="Modifiez votre nom" required></li>
+          <li tabindex="0"><i class="fa fa-map-marker"></i>Prenom :<input type="text" id="prenom"
+              [(ngModel)]="utilisateur.prenom" name="prenom" value="{{utilisateur.prenom}}"
+              placeholder="Modifiez votre prenom" required></li>
+          <li tabindex="0"><i class="fa fa-codepen"></i>Tel :<input type="text" id="telephone"
+              [(ngModel)]="utilisateur.telephone" name="telephone" value="{{utilisateur.telephone}}"
+              placeholder="Modifiez votre tel" required></li>
+          <li tabindex="0"><i class="fa fa-user"></i>Mail :<input type="email" id="email"
+              [(ngModel)]="utilisateur.email" name="email" value="{{utilisateur.email}}"
+              placeholder="Modifiez votre email"></li>
+          <li tabindex="0"><i class="fa fa-dribbble"></i>PIN :<input type="code" id="code"
+              [(ngModel)]="utilisateur.code" name="code" value="{{utilisateur.code}}" placeholder="Modifiez votre PIN"
+              required></li>
+        </ul>
+        <input type="submit" value="Soumettre" (click)="modifierUtilisateur(utilisateur)">
+        <p>{{message}}</p>
+      </div>
     </div>
-    <ul class="middle">
-      <li tabindex="0"><i class="fa fa-check-square-o"></i>Nom :<input type="text" id="nom" name="nom" placeholder="Entrez votre nom" required></li>
-      <li tabindex="0"><i class="fa fa-map-marker"></i>Prenom :<input type="text" id="nom" name="nom" placeholder="Entrez votre prenom" required></li>
-      <li tabindex="0"><i class="fa fa-codepen"></i>Tel :<input type="text" id="nom" name="nom" placeholder="Entrez votre tel" required></li>
-      <li tabindex="0"><i class="fa fa-dribbble"></i>PIN :<input type="text" id="nom" name="nom" placeholder="Entrez votre PIN" required></li>
-      <li tabindex="0"><i class="fa fa-user"></i>Mail :<input type="email" id="email" name="email" placeholder="Entrez votre email" required></li>
-    </ul>
-    <input type="submit" value="Soumettre">
-  </div>
-</div>
+  </ng-container>
+</ng-container>

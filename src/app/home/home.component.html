@@ -21,7 +21,7 @@
     </ng-container>
     <ng-template #loggedIn>
       <div>
-        <a class="btn btn-lg log">User</a>
+        <a class="btn btn-lg log" [routerLink]="['/ficheutilisateur', utilisateurId]">User</a>
         <a class="btn btn-lg log" (click)="logOut()">Log Out</a>
       </div>
     </ng-template>

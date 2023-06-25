@@ -46,10 +46,10 @@ export class FichetechComponent implements OnInit {
   voter() {
     // on récupère l'id de l'utilisateur connecté
     const utilisateurId = localStorage.getItem('utilisateurId');
-    // on récupère le jeu de la page courante à partir de son id
-    const jeu = this.db.collection('jeux').doc(this.jeuId);
     // on vérifie que l'utilisateur est connecté et qu'il n'a déja pas voté
     if (utilisateurId != null) {
+      // on récupère le jeu de la page courante à partir de son id
+      const jeu = this.db.collection('jeux').doc(this.jeuId);
       jeu.get().subscribe((querySnapshot) => {
         // on vérifie qu'un document a été trouvé
         if (!querySnapshot.exists) {

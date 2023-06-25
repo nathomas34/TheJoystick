@@ -55,8 +55,6 @@ export class FormcreaComponent implements OnInit {
   creerJeu() {
     // on récupère l'id de l'utilisateur connecté
     const utilisateurId = localStorage.getItem('utilisateurId');
-    // on récupère le jeu de la page courante à partir de son id
-
     // on vérifie que l'utilisateur est connecté et qu'il n'a déja pas voté
     if (utilisateurId != null) {
       const utilisateur = this.db.collection('utilisateurs').doc(utilisateurId);

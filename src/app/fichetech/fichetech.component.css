@@ -1,9 +1,9 @@
-
 html {
   background-image: url(../../assets/backthejoy1.jpg);
   background-size: 100%;
   background-color: black;
 }
+
 body {
 
   color: white;
@@ -22,21 +22,21 @@ footer {
   border-radius: 30px;
 }
 
-  .container > * {
-    padding: 40px 15px;
-  }
+.container>* {
+  padding: 40px 15px;
+}
 
 .article {
   display: flex;
   flex-wrap: wrap;
 }
 
-  .article > * {
-    padding: 8px 0;
-    margin: auto;
-    width: clamp(400px, 40%, 100%);
-    text-align: center;
-  }
+.article>* {
+  padding: 8px 0;
+  margin: auto;
+  width: clamp(400px, 40%, 100%);
+  text-align: center;
+}
 
 .dot {
   height: 15px;
@@ -49,12 +49,12 @@ footer {
   transition: 0.5s;
 }
 
-  .img {
-    aspect-ratio: 1/1;
-    scroll-behavior: smooth;
-    overflow: hidden;
-    display: flex;
-  }
+.img {
+  aspect-ratio: 1/1;
+  scroll-behavior: smooth;
+  overflow: hidden;
+  display: flex;
+}
 
 button {
   padding: 10px 20px;
@@ -66,41 +66,43 @@ button {
   transition: 0.5s ease;
 }
 
-  button:hover {
-    transform: scale(1.1);
-    transition: 0.5s ease;
-  }
+button:hover {
+  transform: scale(1.1);
+  transition: 0.5s ease;
+}
 
 .tech {
   border-top: 1px solid rgb(200 200 200);
   display: block;
   text-align: center;
 }
+
 a:hover {
   background: #03e9f4;
   color: #fff;
   border-radius: 5px;
   box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 100px #03e9f4;
-  cursor:pointer;
+  cursor: pointer;
 }
-  .tech > .grid > svg {
-    height: 80px;
-    width: 80px;
-    fill: rgb(34 34 34);
-  }
 
-  .tech > .grid {
-    display: grid;
-    grid-gap: 30px;
-    grid: auto auto auto / auto auto auto auto;
-    width: clamp(100px, 100%, 700px);
-    margin: auto;
-    overflow: auto;
-  }
+.tech>.grid>svg {
+  height: 80px;
+  width: 80px;
+  fill: rgb(34 34 34);
+}
 
-    .tech > .grid > * {
-      margin: auto;
-    }
+.tech>.grid {
+  display: grid;
+  grid-gap: 30px;
+  grid: auto auto auto / auto auto auto auto;
+  width: clamp(100px, 100%, 700px);
+  margin: auto;
+  overflow: auto;
+}
+
+.tech>.grid>* {
+  margin: auto;
+}
 
 ::-webkit-scrollbar {
   width: 10px;
@@ -116,11 +118,11 @@ a:hover {
   border-radius: 360px;
 }
 
-.description > p {
+.description>p {
   line-height: 30px;
   text-align: justify;
 }
 
-.description > h2 {
+.description>h2 {
   line-height: 40px;
 }
