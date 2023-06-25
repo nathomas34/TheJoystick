@@ -4,11 +4,13 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\fichetech",
+    "\\src\\app\\ficheutilisateur",
     "\\src\\app\\formcrea",
     "\\src\\app\\home",
     "\\src\\app\\login",
     "\\src\\app\\singup",
     "\\src\\assets"
   ],
+  "SelectedNode": "\\src\\app\\fichetech\\fichetech.component.css",
   "PreviewInSolutionExplorer": false
 }
