@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {
   AngularFirestore,
   AngularFirestoreCollection,
-  QueryDocumentSnapshot,
 } from '@angular/fire/compat/firestore';
 import { Observable } from 'rxjs';
 
@@ -18,7 +17,8 @@ interface Jeu {
   nom: string;
   description: string;
   image: string;
-  votes: string[];
+  votes: number;
+  estVote: boolean;
   createur: string;
 }
 
@@ -33,7 +33,7 @@ export class HomeComponent implements OnInit {
   utilisateurs: Observable<Utilisateur[]> | null = null;
   jeuxCollection: AngularFirestoreCollection<Jeu> | null = null;
   jeux: Observable<any[]> | null = null;
-  estConnecte: boolean = false;
+  utilisateurId: string | null = null;
   constructor(public db: AngularFirestore) {}
 
   ngOnInit() {
@@ -44,14 +44,12 @@ export class HomeComponent implements OnInit {
     this.jeuxCollection = this.db.collection('jeux');
     this.jeux = this.jeuxCollection.valueChanges({ idField: 'idJeu' });
     // on récupére l'id de l'utilisateur connecté avec localStorage
-    const utilisateurId = localStorage.getItem('utilisateurId');
+    this.utilisateurId = localStorage.getItem('utilisateurId');
     // on vérifie si l'utilisateur est connecté
-    if (utilisateurId != null) {
-      // on met la variable à true pour dire qu'on est connecté
-      this.estConnecte = true;
+    if (this.utilisateurId != null) {
       this.db
         .collection('utilisateurs', (ref) =>
-          ref.where('id', '==', utilisateurId)
+          ref.where('id', '==', this.utilisateurId)
         )
         .get()
         .subscribe((querySnapshot) => {
@@ -61,11 +59,6 @@ export class HomeComponent implements OnInit {
           }
         });
     }
-  }
-
-  // fonction pour récupérer tous les jeux
-  getJeux() {
-    this.jeux = this.db.collection('jeux').valueChanges();
   }
 
   // fonction pour se déconnecter

@@ -16,7 +16,14 @@
       </div>
       <div class="achats">
         <div id="likes" class="like"></div>
-        <div><input type="button" id="pause" value="J'aime"></div>
+        <a (click)="voter()">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          Voter
+        </a>
+        <p>{{message}}</p>
       </div>
     </div>
   </div>

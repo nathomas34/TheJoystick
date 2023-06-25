@@ -13,13 +13,15 @@
   <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
       <img src="../assets/LogoNew1.png" />
-      <button class="btn log round" [routerLink]="['/formcrea']"> + </button>
+      <ng-container *ngIf="utilisateurId">
+        <button class="btn log round" [routerLink]="['/formcrea']"> + </button>
+      </ng-container>
     </div>
-    <ng-container *ngIf="estConnecte; then loggedIn; else loggedOut">
+    <ng-container *ngIf="utilisateurId; then loggedIn; else loggedOut">
     </ng-container>
     <ng-template #loggedIn>
       <div>
-        <a class="btn btn-lg log" (click)="logOut()">User</a>
+        <a class="btn btn-lg log">User</a>
         <a class="btn btn-lg log" (click)="logOut()">Log Out</a>
       </div>
     </ng-template>
@@ -38,66 +40,29 @@
       <h1>Créateurs</h1><br>
       <div class="row activate">
         <div class="col-lg-4 col-md-4 col-sm-4">
-          <img src="https://i.pinimg.com/originals/b1/92/4d/b1924dce177345b5485bb5490ab3441f.jpg">
+          <img [src]="">
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4">
-          <p>Top Risers</p>
-          <p style="color: gray; width: 100%; font-size: 12px;">Apex</p>
+          <p></p>
+          <p style="color: gray; width: 100%; font-size: 12px;"></p>
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-lg-4 col-md-4 col-sm-4">
-          <img src="https://i.pinimg.com/736x/df/85/6c/df856c9c0864ef4f275a2f87468a7f57.jpg">
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-4">
-          <p>AllStarsShine</p>
-          <p style="color: gray; width: 100%; font-size: 12px;">Valorant</p>
-        </div>
-      </div>
 
-      <div class="row">
-        <div class="col-lg-4 col-md-4 col-sm-4">
-          <img src="https://www.wallpapertip.com/wmimgs/168-1689550_free-fire-gaming-youtube-channel.jpg">
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-4">
-          <p>SMM1</p>
-          <p style="color: gray; width: 100%; font-size: 12px;">Fortnite</p>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-4 col-md-4 col-sm-4">
-          <img src="https://i.pinimg.com/originals/79/8f/5f/798f5f22f89dddafb188e5cb4089201b.png">
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-4">
-          <p>PowerUp</p>
-          <p style="color: gray; width: 100%; font-size: 12px;">PUBG</p>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-4 col-md-4 col-sm-4">
-          <img src="https://i.pinimg.com/236x/8d/02/ed/8d02edb5b00a2d11a398fefc56ac45e7.jpg">
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-4">
-          <p>IndianaG</p>
-          <p style="color: gray; width: 100%; font-size: 12px;">PUBG</p>
-        </div>
-      </div><br>
     </div>
 
     <div class="col-lg-6 middle">
       <br>
-
       <section style="margin-top: 5%;">
         <h3 style="text-align: center;">Les Jeux</h3>
-        <div class="car" (ngModelChange)="getJeux()">
+        <div class="car">
           <div class="row" *ngFor="let jeu of jeux | async">
             <div class="col-lg-2 col-md-4 col-sm-6">
               <img [src]="jeu.image">
               <h4>{{jeu.nom}}</h4>
-              <button class="btn log round" [routerLink]="['/fichetech', jeu.idJeu]">Voir +</button>
+              <ng-container *ngIf="utilisateurId">
+                <button class="btn log round" [routerLink]="['/fichetech', jeu.idJeu]">Voir +</button>
+              </ng-container>
             </div>
           </div>
         </div>
