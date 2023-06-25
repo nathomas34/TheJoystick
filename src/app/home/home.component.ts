@@ -33,6 +33,7 @@ export class HomeComponent implements OnInit {
   utilisateurs: Observable<Utilisateur[]> | null = null;
   jeuxCollection: AngularFirestoreCollection<Jeu> | null = null;
   jeux: Observable<any[]> | null = null;
+  jeuxPopulaires: Observable<any[]> | null = null;
   utilisateurId: string | null = null;
   constructor(public db: AngularFirestore) {}
 
@@ -43,6 +44,10 @@ export class HomeComponent implements OnInit {
     // on récupère la liste des jeux avec les ids associés
     this.jeuxCollection = this.db.collection('jeux');
     this.jeux = this.jeuxCollection.valueChanges({ idField: 'idJeu' });
+    // on récupère le top 5 des jeux ayant le plus de votes triés par ordre décroissant
+    this.jeuxPopulaires = this.db
+      .collection('jeux', (ref) => ref.orderBy('votes', 'desc').limit(5))
+      .valueChanges();
     // on récupére l'id de l'utilisateur connecté avec localStorage
     this.utilisateurId = localStorage.getItem('utilisateurId');
     // on vérifie si l'utilisateur est connecté

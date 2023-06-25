@@ -38,16 +38,17 @@
       <br>
       <p class="highlight"> Top Créateurs</p>
       <h1>Créateurs</h1><br>
-      <div class="row activate">
-        <div class="col-lg-4 col-md-4 col-sm-4">
-          <img [src]="">
+      <ng-container *ngFor="let jeuPopulaire of jeuxPopulaires | async">
+        <div class="row activate">
+          <div class="col-lg-4 col-md-4 col-sm-4">
+            <img [src]="jeuPopulaire.image">
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-4">
+            <p>{{jeuPopulaire.createur}}</p>
+            <p style="color: gray; width: 100%; font-size: 12px;">{{jeuPopulaire.nom}}</p>
+          </div>
         </div>
-        <div class="col-lg-4 col-md-4 col-sm-4">
-          <p></p>
-          <p style="color: gray; width: 100%; font-size: 12px;"></p>
-        </div>
-      </div>
-
+      </ng-container>
 
     </div>
 
@@ -55,17 +56,20 @@
       <br>
       <section style="margin-top: 5%;">
         <h3 style="text-align: center;">Les Jeux</h3>
-        <div class="car">
-          <div class="row" *ngFor="let jeu of jeux | async">
-            <div class="col-lg-2 col-md-4 col-sm-6">
-              <img [src]="jeu.image">
-              <h4>{{jeu.nom}}</h4>
-              <ng-container *ngIf="utilisateurId">
-                <button class="btn log round" [routerLink]="['/fichetech', jeu.idJeu]">Voir +</button>
-              </ng-container>
+        <ng-container *ngFor="let jeu of jeux | async">
+          <div class="car">
+            <div class="row">
+              <div class="col-lg-2 col-md-4 col-sm-6">
+                <img [src]="jeu.image">
+                <h4>{{jeu.nom}}</h4>
+                <ng-container *ngIf="utilisateurId">
+                  <button class="btn log round" [routerLink]="['/fichetech', jeu.idJeu]">Voir +</button>
+                </ng-container>
+
+              </div>
             </div>
           </div>
-        </div>
+        </ng-container>
       </section>
     </div>
   </div>

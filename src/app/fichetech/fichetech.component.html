@@ -1,30 +1,34 @@
 <body src="../../assets/backthejoy1.jpg">
   <button [routerLink]="['/home']">Retour</button><br />
-  <div class="container" *ngFor="let jeu of jeux | async">
-    <div class="article" *ngIf="jeuId === jeu.id">
-      <div class="carousel">
-        <div class="img">
-          <img [src]="jeu.image">
+  <ng-container *ngFor="let jeu of jeux | async">
+    <ng-container *ngIf="jeuId === jeu.id">
+      <div class="container">
+        <div class="article">
+          <div class="carousel">
+            <div class="img">
+              <img [src]="jeu.image">
+            </div>
+            <div class="span-cont"></div>
+          </div>
+          <div class="description">
+            <h2>{{jeu.nom}}</h2>
+            <p>
+              {{jeu.description}}
+            </p>
+          </div>
+          <div class="achats">
+            <div id="likes" class="like"></div>
+            <a (click)="voter()">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              Voter
+            </a>
+            <p>{{message}}</p>
+          </div>
         </div>
-        <div class="span-cont"></div>
       </div>
-      <div class="description">
-        <h2>{{jeu.nom}}</h2>
-        <p>
-          {{jeu.description}}
-        </p>
-      </div>
-      <div class="achats">
-        <div id="likes" class="like"></div>
-        <a (click)="voter()">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          Voter
-        </a>
-        <p>{{message}}</p>
-      </div>
-    </div>
-  </div>
+    </ng-container>
+  </ng-container>
 </body>

@@ -1,35 +1,34 @@
-<body>
-  <div class="login-box">
-    <h2>SignUp</h2>
-    <form>
-      <div class="user-box">
-        <input type="text" [(ngModel)]="nom" name="nom" required>
-        <label>Nom :</label>
-      </div>
-      <div class="user-box">
-        <input type="text" [(ngModel)]="prenom" name="prenom" required>
-        <label>Prenom :</label>
-      </div>
-      <div class="user-box">
-        <input type="text" [(ngModel)]="telephone" name="telephone" required>
-        <label>Numéro de téléphone :</label>
-      </div>
-      <div class="user-box">
-        <input type="text" [(ngModel)]="email" name="email">
-        <label>Mail :</label>
-      </div>
-      <div class="user-box">
-        <input type="password" [(ngModel)]="code" name="code" required>
-        <label>CODE PIN :</label>
-      </div>
-      <a (click)="creerUtilisateur()">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        S'inscrire
-      </a>
-      <p>{{message}}</p>
-    </form>
-  </div>
-</body>
+<button [routerLink]="['/home']">Retour</button><br />
+<div class="login-box">
+  <h2>SignUp</h2>
+  <form>
+    <div class="user-box">
+      <input type="text" [(ngModel)]="nom" name="nom" required>
+      <label>Nom :</label>
+    </div>
+    <div class="user-box">
+      <input type="text" [(ngModel)]="prenom" name="prenom" required>
+      <label>Prenom :</label>
+    </div>
+    <div class="user-box">
+      <input type="text" [(ngModel)]="telephone" name="telephone" required>
+      <label>Numéro de téléphone :</label>
+    </div>
+    <div class="user-box">
+      <input type="text" [(ngModel)]="email" name="email">
+      <label>Mail :</label>
+    </div>
+    <div class="user-box">
+      <input type="password" [(ngModel)]="code" name="code" required>
+      <label>CODE PIN :</label>
+    </div>
+    <a (click)="creerUtilisateur()">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      S'inscrire
+    </a>
+    <p>{{message}}</p>
+  </form>
+</div>
