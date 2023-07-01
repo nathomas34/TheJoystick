@@ -3,7 +3,7 @@ import {
   AngularFirestore,
   AngularFirestoreCollection,
 } from '@angular/fire/compat/firestore';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 
 interface Utilisateur {
   nom: string;
@@ -17,8 +17,7 @@ interface Jeu {
   nom: string;
   description: string;
   image: string;
-  votes: number;
-  estVote: boolean;
+  votants: string[];
   createur: string;
 }
 
@@ -44,10 +43,22 @@ export class HomeComponent implements OnInit {
     // on récupère la liste des jeux avec les ids associés
     this.jeuxCollection = this.db.collection('jeux');
     this.jeux = this.jeuxCollection.valueChanges({ idField: 'idJeu' });
-    // on récupère le top 5 des jeux ayant le plus de votes triés par ordre décroissant
+    // on récupère le top 5 des jeux les plus populaires c'est à dire ayant le plus de votants,
+    // pour cela on récupère la liste des jeux et on trie par taille de tableau des votants de chaque jeu
+    // et on ne récupère que 5 résultats maximum
     this.jeuxPopulaires = this.db
-      .collection('jeux', (ref) => ref.orderBy('votes', 'desc').limit(5))
-      .valueChanges();
+      .collection('jeux')
+      .valueChanges()
+      .pipe(
+        map((jeux: any[]) => {
+          return jeux
+            .sort(
+              (a, b) =>
+                (b.votants.length as number) - (a.votants.length as number)
+            )
+            .slice(0, 5);
+        })
+      );
     // on récupére l'id de l'utilisateur connecté avec localStorage
     this.utilisateurId = localStorage.getItem('utilisateurId');
     // on vérifie si l'utilisateur est connecté

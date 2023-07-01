@@ -10,8 +10,7 @@ interface Jeu {
   nom: string;
   description: string;
   image: string;
-  votes: number;
-  estVote: boolean;
+  votants: string[];
   createur: string;
 }
 @Component({
@@ -23,13 +22,9 @@ export class FichetechComponent implements OnInit {
   // propriétés de la classe
   jeuxCollection: AngularFirestoreCollection<Jeu> | null = null;
   jeux: Observable<any[]> | null = null;
-  nom: string = '';
-  description: string = '';
-  image: string = '';
-  createur: string = '';
   message: string = '';
   jeuId: any | null = null;
-  votes: number = 0;
+
   constructor(public db: AngularFirestore, private route: ActivatedRoute) {}
 
   ngOnInit() {
@@ -59,14 +54,14 @@ export class FichetechComponent implements OnInit {
         // On récupère le document trouvé
         const data = querySnapshot.data() as Jeu;
         // on vérifie que l'utilisateur n'a pas déjà voté
-        if (data.estVote) {
-          this.message = 'Vous avez déjà voté pour ce jeu.';
+        if (data.votants.includes(utilisateurId)) {
+          this.message = "L'utilisateur est déjà inscrit à cet événement";
           return;
         }
-        // on ajoute 1 aux votes
-        const newVotes = data.votes + 1;
-        // on met à jour les votes dans la base de données et on indique que l'utilisateur a voté
-        jeu.update({ votes: newVotes, estVote: true });
+        // on ajoute l'id de l'utilisateur dans la liste des votants du jeu
+        data.votants.push(utilisateurId);
+        // on met à jour les votants dans la base de données
+        jeu.update({ votants: data.votants });
         // on indique que l'utilisateur a voté
         this.message = 'Votre vote est bien pris en compte.';
       });

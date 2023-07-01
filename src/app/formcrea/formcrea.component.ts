@@ -9,8 +9,7 @@ interface Jeu {
   nom: string;
   description: string;
   image: string;
-  votes: number;
-  estVote: boolean;
+  votants: string[];
   createur: string;
 }
 
@@ -35,8 +34,7 @@ export class FormcreaComponent implements OnInit {
   nom: string = '';
   description: string = '';
   image: string = '';
-  votes: number = 0;
-  estVote: boolean = false;
+  votants: string[] = [];
   createur: string = '';
   message: string = '';
 
@@ -76,8 +74,7 @@ export class FormcreaComponent implements OnInit {
           nom: this.nom,
           description: this.description,
           image: this.image,
-          votes: this.votes,
-          estVote: this.estVote,
+          votants: this.votants,
           createur: data.prenom + ' ' + data.nom,
         };
         // on indique que l'utilisateur a voté
